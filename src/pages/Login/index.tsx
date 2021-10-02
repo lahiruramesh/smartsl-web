@@ -5,6 +5,7 @@ import { Button, Card, Checkbox, Form, Input, Layout } from 'antd'
 import { isEmpty } from 'lodash'
 import useAuthReducer from '../../context/AuthContext/AuthReducer'
 import './Login.scss'
+import logo from '../../assets/logo.png';
 
 export default function Login(): JSX.Element {
     const {
@@ -13,7 +14,7 @@ export default function Login(): JSX.Element {
     } = useAuthReducer()
 
     React.useEffect(() => {
-        document.title = `Digis | Login`
+        document.title = `SmartSL | Login`
     }, [])
 
     const formItemLayout = {
@@ -33,7 +34,7 @@ export default function Login(): JSX.Element {
                 <Card
                     hoverable
                     cover={
-                        <img alt="Digis" src="https://digitalservices.lk/wp-content/uploads/2021/04/DIGI-LOGO-2.png" />
+                        <img alt="Digis" src={logo} />
                     }
                 >
                     <Form {...formItemLayout} name="basic" initialValues={{ remember: true }} onFinish={login}>
