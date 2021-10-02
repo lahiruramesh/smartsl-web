@@ -1,27 +1,133 @@
+# react-admin-template
+#### TODO: Description
 
-## Available Scripts
+# Initial Set-up
+- go to [react-admin-template](https://github.com/inme-digital-services/react-admin-template) and click use this template to create a new repository with this template
+- clone the project and run 
+    - yarn install or npm install
+    - yarn start or npm start
 
-In the project directory, you can run:
+# Folder structure inside src
+### assets
+<p>store media assets required for the application</p>
 
-### `yarn start`
+### components
+<p>Include all the custom re-usable components here</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### configs
+<p>App wide configurations such as</p>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Axios
+- ENVs
+- firebase
 
-### `yarn test`
+### constants
+<p>All the string or magic numbers are assigned to a constant or an object of constants and exported from here</p>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- API endpoints
+- Config strings
 
-### `yarn build`
+### context
+<p>Includes Context providers as a single store to be used in App component and Reducers ready to be used in relevant components</p>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### pages
+<p>All the main page components (page layouts)</p>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### routes
+<p>Main route component with route provider and all the pages mapped to routes</p>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### styles
+<p>Custom scss style functions to be used later</p>
+
+# Modules
+- UI Components Library: AntDesign
+- Dates: date-fns
+- Testing: jest
+- Routing: react-router-dom
+- Validations: validate.js
+
+# Context usage
+## Create new store
+### Add folder with name of the context inside the context page
+#### Add index.tsx file which contains the provider of the store
+~~~tsx
+  interface IStoreNameContext {
+      state: typeof initialState
+      dispatch: Function
+  }
+  const StoreNameContext = createContext<IStoreNameContext>({} as IStoreNameContext)
+  
+  type StoreNameContextProps = {
+      children: JSX.Element
+  }
+  export function StoreNameContextProvider({ children }: StoreNameContextProps): JSX.Element {
+      const [state, dispatch] = React.useReducer(StoreNameReducer, initialState, init)
+  
+      return <StoreNameContext.Provider value={{ state, dispatch }} children={children} />
+  }
+~~~
+
+#### Add storeNameReducer.tsx file which contains the initial state, reducer, and the useStoreNameReducer custom hook
+~~~tsx
+    export const initialState = {
+        value: null
+    }
+    
+    export function storeNameReduder(state: typeof initialState, {type, payload}: IActionType) {
+        switch(type) {
+          case ACTIONS.CHANGE_STATE:
+              return {...state, value: payload}
+        }
+    }
+
+    export function useStoreNameReducer() {
+        const {state, dispatch} = React.useContext(storeNameContext);
+    
+        function changeState(updatedValues) {
+            //Do something
+            dispatch({type: ACTIONS.CHANGE_STATE, payload: updatedValues})
+        }
+        
+        return {
+            state,
+            methods: {
+                changeState
+            }
+        }
+    }
+~~~
+
+### Add context to the store in the index.tsx file inside context folder
+~~~tsx
+type StoreProps = {
+    children: JSX.Element
+}
+export default function Store({ children }: StoreProps) {
+    return (
+        <AuthContextProvider>
+            <AppContainerProvider>
+              <StoreNameContextProvider>
+                {children}
+              </StoreNameContextProvider>
+            </AppContainerProvider>
+        </AuthContextProvider>
+    )
+}
+~~~
+
+## Use created store inside components
+- All the context stores can be accessed using useContext hook inside every child in the app
+~~~tsx
+export default function RandomChildComponent(props: Proptypes): JSX.Element {
+    const {state, methods} = React.useContext(StoreNameContext)
+  
+    return (
+        <div>
+          <p>{state.value}</p>
+          <input type="text" onChange={(event) => methods.changeState(event.target.value)}/>
+        </div>
+    )
+}
+~~~
+
+# Unit Testing: TODO
