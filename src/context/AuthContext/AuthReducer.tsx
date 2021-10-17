@@ -66,7 +66,7 @@ export default function useAuthReducer() {
             else sessionStorage.setItem(SESSION_STORE, JSON.stringify(sessionData))
             dispatch({ type: ACTIONS.LOGIN_SUCCESS, payload: sessionData })
         } catch (e) {
-            message.error(e.message)
+            //message.error(e)
             dispatch({ type: ACTIONS.LOGIN_FAILURE })
         }
     }

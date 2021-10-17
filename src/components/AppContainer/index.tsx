@@ -16,7 +16,7 @@ export default function AppContainer(props: Props): JSX.Element {
             <Layout className={'app-container'}>
                 <Header />
                 <Layout.Content className={'content'}>{props.children}</Layout.Content>
-                <Layout.Footer className={'footer'}>Digital Services (Pvt) Ltd.</Layout.Footer>
+                <Layout.Footer className={'footer'}>Smart SL (Pvt) Ltd</Layout.Footer>
             </Layout>
         </Spin>
     )

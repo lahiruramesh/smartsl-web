@@ -1,5 +1,6 @@
 import React from 'react'
 import { AuthContextProvider } from './AuthContext'
+import { UserContextProvider} from "./UserContext";
 import { AppContainerProvider } from './AppContainer'
 
 type StoreProps = {
@@ -8,7 +9,9 @@ type StoreProps = {
 export default function Store({ children }: StoreProps) {
     return (
         <AuthContextProvider>
-            <AppContainerProvider>{children}</AppContainerProvider>
+            <AppContainerProvider>
+                <UserContextProvider>{children}</UserContextProvider>
+            </AppContainerProvider>
         </AuthContextProvider>
     )
 }

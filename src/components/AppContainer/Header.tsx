@@ -1,9 +1,16 @@
 import React from 'react'
 import { Layout, Menu, message } from 'antd'
 import { useHistory, useLocation } from 'react-router-dom'
-import { HomeOutlined, UserOutlined, ProfileOutlined, LogoutOutlined } from '@ant-design/icons'
+import { HomeOutlined, UserOutlined, ProfileOutlined, LogoutOutlined, ClusterOutlined, CarOutlined, BarChartOutlined, WalletOutlined } from '@ant-design/icons'
 import Clock from '../../components/LiveClock'
-import { HOME_ROUTE, USERS_ROUTE } from '../../routes/constants'
+import {
+    HOME_ROUTE,
+    PAYMENTS_ROUTE,
+    REPORTS_ROUTE,
+    ROUTES_ROUTE,
+    USERS_ROUTE,
+    VEHICLES_ROUTE
+} from '../../routes/constants'
 import useAuthReducer from '../../context/AuthContext/AuthReducer'
 
 export default function Header() {
@@ -23,8 +30,20 @@ export default function Header() {
                 <Menu.Item key={HOME_ROUTE} icon={<HomeOutlined />} onClick={() => history.push(HOME_ROUTE)}>
                     Home
                 </Menu.Item>
+                <Menu.Item key={ROUTES_ROUTE} icon={<ClusterOutlined />} onClick={() => history.push(ROUTES_ROUTE)}>
+                    Routes
+                </Menu.Item>
                 <Menu.Item key={USERS_ROUTE} icon={<ProfileOutlined />} onClick={() => history.push(USERS_ROUTE)}>
                     Users
+                </Menu.Item>
+                <Menu.Item key={VEHICLES_ROUTE} icon={<CarOutlined />} onClick={() => history.push(VEHICLES_ROUTE)}>
+                    Vehicles
+                </Menu.Item>
+                <Menu.Item key={PAYMENTS_ROUTE} icon={<WalletOutlined />} onClick={() => history.push(PAYMENTS_ROUTE)}>
+                    Payments
+                </Menu.Item>
+                <Menu.Item key={REPORTS_ROUTE} icon={<BarChartOutlined />} onClick={() => history.push(REPORTS_ROUTE)}>
+                    Reports
                 </Menu.Item>
                 <Menu.Item style={{ marginLeft: 'auto', color: 'black !important' }}>
                     <Clock format={'h:mm:ss a'} />
