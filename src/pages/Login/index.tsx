@@ -6,6 +6,7 @@ import { isEmpty } from 'lodash'
 import useAuthReducer from '../../context/AuthContext/AuthReducer'
 import './Login.scss'
 import bus from '../../assets/bus.jpg';
+import { createUserRole } from '../../service/UserRoleService'
 
 export default function Login(): JSX.Element {
     const {
@@ -89,6 +90,10 @@ export default function Login(): JSX.Element {
                                     </div>
 
                                 </Form.Item>
+
+                                <Button hidden onClick={createUserRole}>
+                                            Login
+                                        </Button>
 
 
                             </Form>
