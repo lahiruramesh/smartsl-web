@@ -24,7 +24,7 @@ export default function Header() {
     return (
         <Layout.Header className={'header'}>
             <Menu mode="horizontal" selectedKeys={[location.pathname]} triggerSubMenuAction={'click'}>
-                <Menu.Item key={'logo'} onClick={() => history.push(HOME_ROUTE)}>
+                <Menu.Item key={'logo'} onClick={() => history.push(HOME_ROUTE)} hidden>
                     <img src="https://digitalservices.lk/wp-content/uploads/2021/04/DIGI-LOGO-2.png" alt="logo" />
                 </Menu.Item>
                 <Menu.Item key={HOME_ROUTE} icon={<HomeOutlined />} onClick={() => history.push(HOME_ROUTE)}>
@@ -42,7 +42,7 @@ export default function Header() {
                 <Menu.Item key={PAYMENTS_ROUTE} icon={<WalletOutlined />} onClick={() => history.push(PAYMENTS_ROUTE)}>
                     Payments
                 </Menu.Item>
-                <Menu.Item key={REPORTS_ROUTE} icon={<BarChartOutlined />} onClick={() => history.push(REPORTS_ROUTE)}>
+                <Menu.Item key={REPORTS_ROUTE} icon={<BarChartOutlined />} onClick={() => history.push(REPORTS_ROUTE)} hidden>
                     Reports
                 </Menu.Item>
                 <Menu.Item style={{ marginLeft: 'auto', color: 'black !important' }}>
