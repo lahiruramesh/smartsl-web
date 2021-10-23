@@ -2,11 +2,7 @@ import React from "react";
 import "./Report.scss";
 import {LineChart,  Line,  XAxis,  YAxis,  CartesianGrid,  Tooltip,  Legend,  ResponsiveContainer,} from "recharts";
 import { Button,  Card,  Checkbox,  Form,  Input,  Layout,  Row,  Col,  Table,} from "antd";
-import {  withGoogleMap,  withScriptjs,
-  GoogleMap,
-  Marker,
-  InfoWindow
-} from "react-google-maps";
+
 type Props = {};
 const data = [
   {

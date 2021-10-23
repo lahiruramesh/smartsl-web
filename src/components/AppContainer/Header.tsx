@@ -5,10 +5,10 @@ import { HomeOutlined, UserOutlined, ProfileOutlined, LogoutOutlined, ClusterOut
 import Clock from '../../components/LiveClock'
 import {
     HOME_ROUTE,
-    PAYMENTS_ROUTE,
+    PASSENGERS_ROUTE,
     REPORTS_ROUTE,
     ROUTES_ROUTE,
-    USERS_ROUTE,
+    TRIPS_ROUTE,
     VEHICLES_ROUTE
 } from '../../routes/constants'
 import useAuthReducer from '../../context/AuthContext/AuthReducer'
@@ -24,7 +24,7 @@ export default function Header() {
     return (
         <Layout.Header className={'header'}>
             <Menu mode="horizontal" selectedKeys={[location.pathname]} triggerSubMenuAction={'click'}>
-                <Menu.Item key={'logo'} onClick={() => history.push(HOME_ROUTE)} hidden>
+                <Menu.Item key={'logo'} onClick={() => history.push(HOME_ROUTE)}>
                     <img src="https://digitalservices.lk/wp-content/uploads/2021/04/DIGI-LOGO-2.png" alt="logo" />
                 </Menu.Item>
                 <Menu.Item key={HOME_ROUTE} icon={<HomeOutlined />} onClick={() => history.push(HOME_ROUTE)}>
@@ -33,14 +33,14 @@ export default function Header() {
                 <Menu.Item key={ROUTES_ROUTE} icon={<ClusterOutlined />} onClick={() => history.push(ROUTES_ROUTE)}>
                     Routes
                 </Menu.Item>
-                <Menu.Item key={USERS_ROUTE} icon={<ProfileOutlined />} onClick={() => history.push(USERS_ROUTE)}>
-                    Users
+                <Menu.Item key={TRIPS_ROUTE} icon={<ProfileOutlined />} onClick={() => history.push(TRIPS_ROUTE)}>
+                    Trips
                 </Menu.Item>
                 <Menu.Item key={VEHICLES_ROUTE} icon={<CarOutlined />} onClick={() => history.push(VEHICLES_ROUTE)}>
                     Vehicles
                 </Menu.Item>
-                <Menu.Item key={PAYMENTS_ROUTE} icon={<WalletOutlined />} onClick={() => history.push(PAYMENTS_ROUTE)}>
-                    Payments
+                <Menu.Item key={PASSENGERS_ROUTE} icon={<WalletOutlined />} onClick={() => history.push(PASSENGERS_ROUTE)}>
+                    Passengers
                 </Menu.Item>
                 <Menu.Item key={REPORTS_ROUTE} icon={<BarChartOutlined />} onClick={() => history.push(REPORTS_ROUTE)} hidden>
                     Reports
