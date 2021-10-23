@@ -5,7 +5,7 @@ import { HomeOutlined, UserOutlined, ProfileOutlined, LogoutOutlined, ClusterOut
 import Clock from '../../components/LiveClock'
 import {
     HOME_ROUTE,
-    PAYMENTS_ROUTE,
+    PASSENGERS_ROUTE,
     REPORTS_ROUTE,
     ROUTES_ROUTE,
     USERS_ROUTE,
@@ -34,13 +34,13 @@ export default function Header() {
                     Routes
                 </Menu.Item>
                 <Menu.Item key={USERS_ROUTE} icon={<ProfileOutlined />} onClick={() => history.push(USERS_ROUTE)}>
-                    Users
+                    Trips
                 </Menu.Item>
                 <Menu.Item key={VEHICLES_ROUTE} icon={<CarOutlined />} onClick={() => history.push(VEHICLES_ROUTE)}>
                     Vehicles
                 </Menu.Item>
-                <Menu.Item key={PAYMENTS_ROUTE} icon={<WalletOutlined />} onClick={() => history.push(PAYMENTS_ROUTE)}>
-                    Payments
+                <Menu.Item key={PASSENGERS_ROUTE} icon={<WalletOutlined />} onClick={() => history.push(PASSENGERS_ROUTE)}>
+                    Passengers
                 </Menu.Item>
                 <Menu.Item key={REPORTS_ROUTE} icon={<BarChartOutlined />} onClick={() => history.push(REPORTS_ROUTE)}>
                     Reports

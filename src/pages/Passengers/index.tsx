@@ -3,7 +3,7 @@ import { HOME_ROUTE } from '../../routes/constants'
 import { Redirect } from 'react-router-dom'
 import 'antd/dist/antd.css';
 import { Menu, Button, Card, Row,Table, TablePaginationConfig, Col, Dropdown, message, Input } from 'antd'
-import './Payments.scss'
+import './Passenger.scss'
 
 type Props = {}
 
@@ -14,7 +14,7 @@ function handleMenuClick(e: any) {
 
 
 
-const payment = (
+const passenger = (
     <Menu onClick={handleMenuClick}>
         <Menu.Item key="1">
             In progress
@@ -72,7 +72,7 @@ const cols = [
     },
 ];
 
-export default function Payments(props: Props): JSX.Element {
+export default function Passengers(props: Props): JSX.Element {
 
     const [pages, SetPages] = useState<TablePaginationConfig>( {
         current: 1,
@@ -95,7 +95,7 @@ export default function Payments(props: Props): JSX.Element {
                     </Col>
                    
                     <Col className="gutter-row" span={2.5}>
-                        <div id="style"><Dropdown.Button overlay={payment} >
+                        <div id="style"><Dropdown.Button overlay={passenger} >
                             Payment
                         </Dropdown.Button></div>
                     </Col>
