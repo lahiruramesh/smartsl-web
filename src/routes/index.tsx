@@ -6,9 +6,11 @@ import Passengers from "../pages/Passengers";
 import Routes from "../pages/Routes";
 import Reports from '../pages/Reports';
 import Vehicles from '../pages/Vehicles';
+import Timetables from '../pages/Timetable';
+
 
 import { isEmpty } from 'lodash'
-import { AUTH_ROUTES, HOME_ROUTE, TRIPS_ROUTE, PASSENGERS_ROUTE, REPORTS_ROUTE, ROUTES_ROUTE, VEHICLES_ROUTE } from './constants'
+import { AUTH_ROUTES, HOME_ROUTE, TRIPS_ROUTE, PASSENGERS_ROUTE, REPORTS_ROUTE, ROUTES_ROUTE,TIMETABLES_ROUTE, VEHICLES_ROUTE } from './constants'
 import AppContainer from '../components/AppContainer'
 import useAuthReducer from '../context/AuthContext/AuthReducer'
 
@@ -34,6 +36,7 @@ export default function Router(): JSX.Element {
                         <PrivateRoute path={HOME_ROUTE} component={Home} />
                         <PrivateRoute path={TRIPS_ROUTE} component={Trips} />
                         <PrivateRoute path={PASSENGERS_ROUTE} component={Passengers} />
+                        <PrivateRoute path={TIMETABLES_ROUTE} component={Timetables} />
                         <PrivateRoute path={REPORTS_ROUTE} component={Reports} />
                         <PrivateRoute path={VEHICLES_ROUTE} component={Vehicles} />
                         <PrivateRoute path={ROUTES_ROUTE} component={Routes} />

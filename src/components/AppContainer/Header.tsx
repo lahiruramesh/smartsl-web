@@ -9,6 +9,7 @@ import {
     REPORTS_ROUTE,
     ROUTES_ROUTE,
     TRIPS_ROUTE,
+    TIMETABLES_ROUTE,
     VEHICLES_ROUTE
 } from '../../routes/constants'
 import useAuthReducer from '../../context/AuthContext/AuthReducer'
@@ -41,6 +42,9 @@ export default function Header() {
                 </Menu.Item>
                 <Menu.Item key={PASSENGERS_ROUTE} icon={<WalletOutlined />} onClick={() => history.push(PASSENGERS_ROUTE)}>
                     Passengers
+                </Menu.Item>
+                <Menu.Item key={TIMETABLES_ROUTE} icon={<WalletOutlined />} onClick={() => history.push(TIMETABLES_ROUTE)}>
+                    Timetables
                 </Menu.Item>
                 {/* <Menu.Item key={REPORTS_ROUTE} icon={<BarChartOutlined />} onClick={() => history.push(REPORTS_ROUTE)}>
                     Reports
