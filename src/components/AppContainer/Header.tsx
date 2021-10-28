@@ -33,18 +33,18 @@ export default function Header() {
                 <Menu.Item key={ROUTES_ROUTE} icon={<ClusterOutlined />} onClick={() => history.push(ROUTES_ROUTE)}>
                     Routes
                 </Menu.Item>
-                <Menu.Item key={TRIPS_ROUTE} icon={<ProfileOutlined />} onClick={() => history.push(TRIPS_ROUTE)}>
+                {/* <Menu.Item key={TRIPS_ROUTE} icon={<ProfileOutlined />} onClick={() => history.push(TRIPS_ROUTE)}>
                     Trips
-                </Menu.Item>
+                </Menu.Item> */}
                 <Menu.Item key={VEHICLES_ROUTE} icon={<CarOutlined />} onClick={() => history.push(VEHICLES_ROUTE)}>
                     Vehicles
                 </Menu.Item>
                 <Menu.Item key={PASSENGERS_ROUTE} icon={<WalletOutlined />} onClick={() => history.push(PASSENGERS_ROUTE)}>
                     Passengers
                 </Menu.Item>
-                <Menu.Item key={REPORTS_ROUTE} icon={<BarChartOutlined />} onClick={() => history.push(REPORTS_ROUTE)} hidden>
+                {/* <Menu.Item key={REPORTS_ROUTE} icon={<BarChartOutlined />} onClick={() => history.push(REPORTS_ROUTE)}>
                     Reports
-                </Menu.Item>
+                </Menu.Item> */}
                 <Menu.Item style={{ marginLeft: 'auto', color: 'black !important' }}>
                     <Clock format={'h:mm:ss a'} />
                 </Menu.Item>

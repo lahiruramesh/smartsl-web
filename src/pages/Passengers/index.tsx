@@ -78,6 +78,54 @@ export default function Passengers(props: Props): JSX.Element {
         current: 1,
         pageSize: 10,
     });
+    const dataSource = [
+        {
+          key: '1',
+          passengerid: 'P001',
+          tripid: 'trip01',
+          status:'Completed',
+          payment: 'Collected',
+          alert:'Sent',
+
+        },
+        {
+            key: '2',
+            passengerid: 'P002',
+            tripid: 'trip02',
+            status:'In Progress',
+            payment: 'Collected',
+            alert:'Sent',
+  
+          },
+          {
+            key: '3',
+            passengerid: 'P003',
+            tripid: 'trip03',
+            status:'In Progress',
+            payment: 'In Progress',
+            alert:'To be Sent',
+  
+          },
+          {
+            key: '4',
+            passengerid: 'P004',
+            tripid: 'trip04',
+            status:'Completed',
+            payment: 'In Progress',
+            alert:'To be Sent',
+  
+          },
+          {
+            key: '5',
+            passengerid: 'P005',
+            tripid: 'trip05',
+            status:'Completed',
+            payment: 'Completed',
+            alert:'Sent',
+  
+          },
+      ];
+    
     
     return (
         <>
@@ -115,7 +163,8 @@ export default function Passengers(props: Props): JSX.Element {
                         <Table
                     columns={cols}
                     pagination={pages}
-                    rowKey={record => record.login.uuid}
+                    dataSource={dataSource}
+                    
                 
                      />                        </Card>
                     </Col>
